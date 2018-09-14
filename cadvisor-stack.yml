@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+
+  visualizer:
+    image: jahrik/arm-cadvisor:arm32v7
+    volumes:
+      - /:/rootfs:ro
+      - /var/run:/var/run:rw
+      - /sys:/sys:ro
+      - /var/lib/docker/:/var/lib/docker:ro
+    ports:
+      - 8082:8080
+    deploy:
+      replicated:
+        replicas: 1
