@@ -1,5 +1,6 @@
 IMAGE = "jahrik/arm-cadvisor"
 TAG = "arm32v7"
+STACK = "monitor"
 
 all: build
 
@@ -12,6 +13,6 @@ push:
 	@docker push ${IMAGE}:latest
 
 deploy:
-	@docker stack deploy -c cadvisor-stack.yml cadvisor
+	@docker stack deploy -c docker-compose.yml ${STACK}
 
 .PHONY: all build push deploy

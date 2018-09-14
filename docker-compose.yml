@@ -2,7 +2,7 @@ version: '3'
 
 services:
 
-  visualizer:
+  cadvisor:
     image: jahrik/arm-cadvisor:arm32v7
     volumes:
       - /:/rootfs:ro
