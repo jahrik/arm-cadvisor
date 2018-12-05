@@ -9,7 +9,5 @@ services:
       - /var/run:/var/run:rw
       - /sys:/sys:ro
       - /var/lib/docker/:/var/lib/docker:ro
-    # ports:
-    # - 8082:8080
     deploy:
       mode: global
