@@ -18,5 +18,4 @@ make deploy                                 # swarm stack deploy (stack: monitor
 
 - Upstream image tags lag GitHub releases — check `gcr.io/v2/cadvisor/cadvisor/tags/list` before bumping `FROM`.
 - `docker-compose.yml` is a swarm fragment: `mode: global`, external `monitor` overlay network — keep that wiring.
-- Host mounts are required for real metrics; `/healthz` works without them. Rootless Podman can't provide them — full verification is in CI.
-- Local `docker` is a Podman shim; fully qualify image refs.
+- Host mounts are required for real metrics; `/healthz` works without them.
