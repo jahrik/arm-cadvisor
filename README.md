@@ -28,4 +28,4 @@ make build
 make push
 ```
 
-CI: PR builds + health check; merge to main pushes multi-arch (amd64/arm64) to Docker Hub.
+CI: PR builds + health check; merge to main pushes multi-arch (amd64/arm64/armv7) to Docker Hub.
