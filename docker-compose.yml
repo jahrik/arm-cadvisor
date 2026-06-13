@@ -1,11 +1,7 @@
-version: '3'
-
+---
 services:
-
-services:
-
-  cadvisor-armv7l:
-    image: jahrik/arm-cadvisor:armv7l
+  cadvisor:
+    image: jahrik/arm-cadvisor:latest
     networks:
       - monitor
     volumes:
@@ -15,41 +11,9 @@ services:
       - /var/lib/docker/:/var/lib/docker:ro
     deploy:
       mode: global
-      placement:
-        constraints:
-          - node.labels.arch == arm32v7
-
-  cadvisor-aarch64:
-    image: jahrik/arm-cadvisor:aarch64
-    networks:
-      - monitor
-    volumes:
-      - /:/rootfs:ro
-      - /var/run:/var/run:rw
-      - /sys:/sys:ro
-      - /var/lib/docker/:/var/lib/docker:ro
-    deploy:
-      mode: global
-      placement:
-        constraints:
-          - node.labels.arch == aarch64
-
-  cadvisor-amd64:
-    image: jahrik/arm-cadvisor:x86_64
-    networks:
-      - monitor
-    volumes:
-      - /:/rootfs:ro
-      - /var/run:/var/run:rw
-      - /sys:/sys:ro
-      - /var/lib/docker/:/var/lib/docker:ro
-    deploy:
-      mode: global
-      placement:
-        constraints:
-          - node.labels.arch == x86_64
 
 networks:
   monitor:
+    name: monitor
     driver: overlay
     external: true
