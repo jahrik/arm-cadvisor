@@ -5,9 +5,9 @@ Multi-arch cAdvisor image: a pinned `FROM` over official `gcr.io/cadvisor/cadvis
 ## Commands
 
 ```bash
-make build                                  # build jahrik/arm-cadvisor:latest
+just build                                  # build jahrik/arm-cadvisor:latest
 curl -fsS http://localhost:8080/healthz     # smoke test a running container
-make deploy                                 # swarm stack deploy (stack: monitor)
+just deploy                                 # swarm stack deploy (stack: monitor)
 ```
 
 ## CI
