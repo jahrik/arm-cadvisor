@@ -18,14 +18,14 @@ curl http://localhost:8080/healthz
 
 ```bash
 docker network create -d overlay monitor   # once
-make deploy
+just deploy
 ```
 
 ## Build
 
 ```bash
-make build
-make push
+just build
+just push
 ```
 
 CI: PR builds + health check; merge to main pushes multi-arch (amd64/arm64/armv7) to Docker Hub.
